@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여름 음악 플레이리스트</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #daeef9df;
+            font-family: 'Arial', sans-serif;
+        }
+        .title {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .radio {
+            width: 800px;
+            height: 300px;
+            background-color: #e5f7f6;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+            flex: 1;
+            padding: 10px;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        .button:hover {
+            background-color: #ddd;
+            transform: scale(1.1);
+        }
+        .video-container {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Hahyun's Summer 24 Playlist</div>
+    <div class="radio">
+        <div class="button-container">
+            <!-- summer -->
+            <button class="button" onclick="playVideo('13EWqjMqkiY')">🎧</button>
+            <!-- luckygirl -->
+            <button class="button" onclick="playVideo('UCmgGZbfjmk')">🧚‍♀️</button>
+            <!-- vaundy -->
+            <button class="button" onclick="playVideo('7HgJIAUtICU')">🍧</button>
+            <!-- balloon in love -->
+            <button class="button" onclick="playVideo('JXhbBbe0i-I')">💗</button>
+            <!-- up -->
+            <button class="button" onclick="playVideo('2rZPsLvTD-g')">🏃‍♀️</button>
+            <!-- starlight -->
+            <button class="button" onclick="playVideo('fsigYmDuB9Y')">💫</button>
+            <!-- aespa -->
+            <button class="button" onclick="playVideo('nFYwcndNuOY')">👽</button>
+            <!-- champagne supernova -->
+            <button class="button" onclick="playVideo('tI-5uv4wryI')">🌦</button>
+            <!-- weekend -->
+            <button class="button" onclick="playVideo('RmuL-BPFi2Q')">💿</button>
+        </div>
+        <div class="video-container">
+            <iframe id="videoFrame" src="" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoId) {
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+        }
+    </script>
+</body>
+</html>
